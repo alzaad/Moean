@@ -60,22 +60,8 @@ class InitialStudyController extends Controller
 
         // 16
         if($family >= 16 && $home == 'نعم'){
-            $total_rent = 8750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent ){
-                $result = 'غير مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
+            if($total <= 9750 ){
+                $result = ' مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
                 $initialstudy->salary = $request['salary'];
@@ -86,6 +72,18 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.success');
+            }else{
+                $result = ' غير مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.error_2');
             }
         }elseif($family == 16 && $home == 'لا'){
             if($total > 8750 ){
@@ -114,11 +112,21 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 15
+        // // 15
         if($family == 15 && $home == 'نعم'){
-            $total_rent = 8250 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent ){
+            if($total <= 9250 ){
+                $result = ' مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -130,18 +138,6 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
             }
         }elseif($family == 15 && $home == 'لا'){
             if($total > 8250 ){
@@ -170,23 +166,9 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-         // 14
+        //  // 14
         if($family == 14 && $home == 'نعم'){
-            $total_rent = 7750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
-                $result = ' غير مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.error_2');
-            }else{
+            if($total <= 8750){
                 $result = 'مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -198,6 +180,19 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.success');
+
+            }else{
+                $result = ' غير مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.error_2');
             }
         }elseif($family == 14 && $home == 'لا'){
             if($total > 7750 ){
@@ -226,11 +221,22 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-         // 13
+        //  // 13
         if($family == 13 && $home == 'نعم'){
-            $total_rent = 7250 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent ){
+            if($total <= 8250 ){
+                $result = ' مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -242,18 +248,6 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
             }
         }elseif($family == 13 && $home == 'لا'){
             if($total > 7250 ){
@@ -282,11 +276,22 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-         // 12
+        //  // 12
         if($family == 12 && $home == 'نعم'){
-            $total_rent = 6750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent ){
+            if($total <= 7750 ){
+                $result = '  مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+                
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -298,18 +303,7 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
+                
             }
         }elseif($family == 12 && $home == 'لا'){
             if($total > 6750 ){
@@ -338,11 +332,21 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-         // 11
+        //  // 11
          if($family == 11 && $home == 'نعم'){
-            $total_rent = 6250 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent ){
+            if($total <=  7250 ){
+                $result = ' مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -354,18 +358,6 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
             }
         }elseif($family == 11 && $home == 'لا'){
             if($total > 6250 ){
@@ -394,11 +386,21 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         } 
-        // 10
+        // // 10
         if($family == 10 && $home == 'نعم'){
-            $total_rent = 5750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent ){
+            if($total <= 6750 ){
+                $result = ' مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -410,18 +412,6 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
             }
         }elseif($family == 10 && $home == 'لا'){
             if($total > 5750 ){
@@ -450,23 +440,9 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 9
+        // // 9
         if($family == 9 && $home == 'نعم'){
-            $total_rent = 5250 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
-                $result = ' غير مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.error_2');
-            }else{
+            if($total <= 6250){
                 $result = 'مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -478,6 +454,18 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.success');
+            }else{
+                $result = ' غير مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.error_2');
             }
         }elseif($family == 9 && $home == 'لا'){
             if($total > 5250 ){
@@ -506,23 +494,9 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 8
+        // // 8
         if($family == 8 && $home == 'نعم'){
-            $total_rent = 4750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
-                $result = ' غير مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.error_2');
-            }else{
+            if($total <= 5750){
                 $result = 'مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -534,6 +508,20 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.success');
+                
+            }else{
+                $result = ' غير مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.error_2');
+                
             }
         }elseif($family == 8 && $home == 'لا'){
             if($total > 4750 ){
@@ -554,23 +542,9 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 7
+        // // 7
         if($family == 7 && $home == 'نعم'){
-            $total_rent = 4250 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
-                $result = ' غير مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.error_2');
-            }else{
+            if($total <= 5250){
                 $result = 'مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -582,6 +556,20 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.success');
+                
+            }else{
+                $result = ' غير مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.error_2');
+                
             }
         }elseif($family == 7 && $home == 'لا'){
             if($total > 4250 ){
@@ -610,11 +598,21 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 6
+        // // 6
         if($family == 6 && $home == 'نعم'){
-            $total_rent = 3750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
+            if($total <= 4750){
+                $result = ' مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -626,18 +624,7 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
+                
             }
         }elseif($family == 6 && $home == 'لا'){
             if($total > 3750 ){
@@ -666,11 +653,21 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 5
+        // // 5
         if($family == 5 && $home == 'نعم'){
-            $total_rent = 3250 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
+            if($total <= 4250){
+                $result = '  مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -682,18 +679,7 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
+                
             }
         }elseif($family == 5 && $home == 'لا'){
             if($total  > 3250 ){
@@ -722,11 +708,21 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 4
+        // // 4
         if($family == 4 && $home == 'نعم'){
-            $total_rent = 2750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
+            if($total <= 3750){
+                $result = '  مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -738,18 +734,7 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
+                
             }
         }elseif($family == 4 && $home == 'لا'){
             if($total > 2750 ){
@@ -778,11 +763,21 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 3
+        // // 3
         if($family == 3 && $home == 'نعم'){
-            $total_rent = 2250 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
+            if($total <= 3250){
+                $result = '  مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -794,18 +789,7 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
+                
             }
         }elseif($family == 3 && $home == 'لا'){
             if($total > 2250 ){
@@ -825,14 +809,9 @@ class InitialStudyController extends Controller
                 return view('benefits.first.success');
             }
         }
-        // 2
+        // // 2
         if($family == 2 && $home == 'نعم'){
-            $total_rent = 1750 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
-                $result = ' غير مؤهل';
-                return view('benefits.first.error_2');
-            }else{
+            if($total <=  2750){
                 $result = 'مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -844,6 +823,20 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.success');
+                
+            }else{
+                $result = ' غير مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.error_2');
+               
             }
         }elseif($family == 2 && $home == 'لا'){
             if($total  > 1750 ){
@@ -873,11 +866,21 @@ class InitialStudyController extends Controller
             }
         }
         
-         // 1
+        //  // 1
         if($family == 1 && $home == 'نعم'){
-            $total_rent = 1000 + 1000;
-            $total_ = $total + 1000; 
-            if($total_ > $total_rent){
+            if($total <=  2000){
+                $result = '  مؤهل';
+                $initialstudy->user_id = Auth::user()->id;
+                $initialstudy->family = $request['family'];
+                $initialstudy->salary = $request['salary'];
+                $initialstudy->social_security = $request['social_security'];
+                $initialstudy->retirement = $request['retirement'];
+                $initialstudy->other = $request['other'];
+                $initialstudy->home = $request['home'];
+                $initialstudy->result = $result;
+                $initialstudy->save();
+                return view('benefits.first.success');
+            }else{
                 $result = ' غير مؤهل';
                 $initialstudy->user_id = Auth::user()->id;
                 $initialstudy->family = $request['family'];
@@ -889,18 +892,7 @@ class InitialStudyController extends Controller
                 $initialstudy->result = $result;
                 $initialstudy->save();
                 return view('benefits.first.error_2');
-            }else{
-                $result = 'مؤهل';
-                $initialstudy->user_id = Auth::user()->id;
-                $initialstudy->family = $request['family'];
-                $initialstudy->salary = $request['salary'];
-                $initialstudy->social_security = $request['social_security'];
-                $initialstudy->retirement = $request['retirement'];
-                $initialstudy->other = $request['other'];
-                $initialstudy->home = $request['home'];
-                $initialstudy->result = $result;
-                $initialstudy->save();
-                return view('benefits.first.success');
+                
             }
         }elseif($family == 1 && $home == 'لا'){
             if($total  > 1000 ){
